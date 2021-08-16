@@ -10,48 +10,48 @@
       </ul>
     </div>
   <% end %>
-
-  <div class="field">
+  <div class="container">
+  <div class="form-group col-md-6">
     <%= form.label :nome %>
-    <%= form.text_field :nome %>
+    <%= form.text_field :nome, class:"form-control" %>
   </div>
 
-  <div class="field">
+  <div class="form-group col-md-6">
     <%= form.label :raca %>
-    <%= form.text_field :raca %>
+    <%= form.text_field :raca, class:"form-control" %>
   </div>
 
-  <div class="field">
+  <div class="form-group col-md-6">
     <%= form.label :especie %>
-    <%= form.text_field :especie %>
+    <%= form.text_field :especie, class:"form-control" %>
   </div>
 
-  <div class="field">
+  <div class="form-group col-md-6">
     <%= form.label :sexo %>
-    <%= form.text_field :sexo %>
+    <%= form.text_field :sexo, class:"form-control" %>
   </div>
 
-  <div class="field">
+  <div class="form-group col-md-6">
     <%= form.label :peso %>
-    <%= form.text_field :peso %>
+    <%= form.text_field :peso, class:"form-control" %>
   </div>
 
-  <div class="field">
+  <div class="form-group col-md-6">
     <%= form.label :data_de_nascimento %>
-    <%= form.text_field :data_de_nascimento %>
+    <%= form.text_field :data_de_nascimento, class:"form-control" %>
   </div>
 
-  <div class="field">
+  <div class="form-group col-md-6">
     <%= form.label :situacao %>
-    <%= form.text_field :situacao %>
+    <%= form.text_field :situacao, class:"form-control" %>
   </div>
 
-  <div class="field">
+  <div class="form-group col-md-6">
     <%= form.label :ong_id %>
-    <%= form.text_field :ong_id %>
+    <%= form.text_field :ong_id, class:"form-control" %>
   </div>
 
-  <div class="actions">
-    <%= form.submit %>
+  <div class="actions btn">
+    <%= form.submit 'Salvar', class:"btn btn-primary" %>
   </div>
 <% end %>
