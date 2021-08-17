@@ -1,8 +1,21 @@
 <p id="notice"><%= notice %></p>
 
+<div class="row">
+    <div class="form-group col-sm-2">
+      <%= label_tag :nome %>
+      <%= select_tag :id, options_from_collection_for_select(Animal.all.order(:nome),"id","nome"),include_blank: 'Selecione' %>
+    </div>
+  </div>
+  <div class="row">
+  <div class="form-group col-sm-3">
+    <%=button_tag(value: "commit",type:'submit',class: "btn btn-success") do %>
+    Pesquisar
+    <%end %>
+  </div>
+</div>
 <h1>Animals</h1>
 
-<table>
+<table class="table">
   <thead>
     <tr>
       <th>Nome</th>
@@ -27,7 +40,7 @@
         <td><%= animal.peso %></td>
         <td><%= animal.data_de_nascimento %></td>
         <td><%= animal.situacao %></td>
-        <td><%= animal.ong %></td>
+        <td><%= animal.ong.nome %></td>
         <td><%= link_to 'Show', animal %></td>
         <td><%= link_to 'Edit', edit_animal_path(animal) %></td>
         <td><%= link_to 'Destroy', animal, method: :delete, data: { confirm: 'Are you sure?' } %></td>
