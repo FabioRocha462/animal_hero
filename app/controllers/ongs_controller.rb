@@ -1,13 +1,14 @@
 class OngsController < ApplicationController
   before_action :set_ong, only: [:show, :edit, :update, :destroy]
+  before_action :set_user_options, only: [:new, :create, :edit, :update]
 
   # GET /ongs
   # GET /ongs.json
   def index
     if params[:id].nil?
-      @ongs = Ong.all
+      @ongs = Ong.where(user_id: session[:user_id])
     else
-      @ongs = Ong.where(id: params[:id])
+      @ongs = Ong.where(id: params[:id], user_id: current_user.id)
     end
   end
 
@@ -29,6 +30,7 @@ class OngsController < ApplicationController
   # POST /ongs.json
   def create
     @ong = Ong.new(ong_params)
+    @ong.user_id = current_user.id
 
     respond_to do |format|
       if @ong.save
@@ -67,6 +69,10 @@ class OngsController < ApplicationController
 
   private
     # Use callbacks to share common setup or constraints between actions.
+    def set_user_options
+      @user_options = User.all.pluck(:name, :id)
+    end
+
     def set_ong
       @ong = Ong.find(params[:id])
     end
