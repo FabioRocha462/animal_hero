@@ -2,7 +2,7 @@
 
 <h1>Animals</h1>
 
-<table>
+<table class="table">
   <thead>
     <tr>
       <th>Nome</th>
@@ -27,7 +27,7 @@
         <td><%= animal.peso %></td>
         <td><%= animal.data_de_nascimento %></td>
         <td><%= animal.situacao %></td>
-        <td><%= animal.ong %></td>
+        <td><%= animal.ong.nome %></td>
         <td><%= link_to 'Show', animal %></td>
         <td><%= link_to 'Edit', edit_animal_path(animal) %></td>
         <td><%= link_to 'Destroy', animal, method: :delete, data: { confirm: 'Are you sure?' } %></td>
